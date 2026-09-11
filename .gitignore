@@ -1,0 +1,69 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Simulation
+work/
+transcript
+*.wlf
+*.vcd
+*.fst
+*.ghw
+
+# Questa / ModelSim
+modelsim.ini
+*.log
+
+# Vivado
+.xpr
+.xcix
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.xsim/
+*.jou
+*.str
+*.wdb
+
+# Synthesis / implementation generated files
+*.rpt
+*.dcp
+*.edf
+*.bit
+*.ltx
+
+# Build directories
+build/
+out/
+output/
+tmp/
+temp/
+
+# OpenROAD / OpenLane generated data
+runs/
+results/
+logs/
+reports/
+*.odb
+*.def.gz
+*.lef.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large generated files
+*.zip
+*.tar
+*.gz
+
+# Personal files
+*.bak
+*.swp
