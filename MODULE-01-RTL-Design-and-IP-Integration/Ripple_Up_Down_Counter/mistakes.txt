@@ -1,0 +1,40 @@
+Mistakes encountered and fixes
+Used ; instead of , in port connections
+Mistake: While declaring/connecting ports using the alternate port-mapping style, ; was typed instead of ,.
+Fix: Replaced ; with ,.
+Type: Syntax error / compilation issue.
+Incorrect signal name in port mapping
+
+Mistake: Wrote:
+
+.select(select)
+
+instead of using the actual testbench signal:
+
+.select(switch)
+Effect: The DUT's select input was connected to the wrong/nonexistent signal.
+
+Fix:
+
+.select(switch)
+Type: Port connection/naming mistake.
+Incorrect width of i input
+Mistake: The RTL expected i to be 2 bits, but only q_0 (1 bit) was connected.
+
+Original:
+
+.i(q_0)
+
+Fix:
+
+.i({~q_0, q_0})
+Effect: The DUT receives the required 2-bit input.
+Type: Bit-width/functional connection mistake.
+count width not declared correctly in the testbench
+Mistake: The RTL count is 4 bits, but the testbench did not declare the corresponding count signal as 4 bits.
+
+Fix: Declare it consistently, e.g.:
+
+logic [3:0] count;
+Effect: Ensures all four counter bits are captured correctly in the testbench.
+Type: Signal-width mismatch.
